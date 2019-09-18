@@ -5,7 +5,8 @@ change_apt_source() {
 }
 
 change_python_source() {
-	echo todo
+    echo "[global]" |sudo tee -a /etc/pip.conf
+    echo "index-url=http://pypi.douban.com/simple" |sudo tee -a /etc/pip.conf
 }
 
 install_packages() {
@@ -48,5 +49,6 @@ install_vim_rc() {
     ln -s ~/.vim.d/vimrc ~/.vimrc
 }
 
-install_tmux_rc
-install_vim_rc
+#change_python_source
+#install_tmux_rc
+#install_vim_rc
